@@ -1,0 +1,61 @@
+/* PAGINA DE PRODUCTOS */
+
+.main_productos_container {
+    padding: 10%;
+    width: 100%;
+    margin: auto;
+}
+
+.container_productos {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 1rem .5rem;
+}
+
+.container_info h2 {
+    font-size: clamp(1.2rem,2.5vw,2rem);
+    font-family: "Montserrat";
+}
+
+.container_info img {
+    max-width: 250px;
+    max-height: 200px;
+}
+
+@media screen and (max-width:726px) {
+    .container_productos {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .container_info img {
+        max-width: 200px;
+        max-height: 150px;
+    }
+}
+
+/* PAGINA DE NOSOTROS */
+
+.section_sobrenosotros {
+    padding: 6% 10%;
+}
+
+.section_sobrenosotros_info h2 {
+    color: var(--negro);
+    font-size: clamp(1.5rem,3vw,2rem);
+    font-family: "Montserrat";
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.section_sobrenosotros_info p {
+    width: 100%;
+    color: var(--gris-texto);
+    letter-spacing: 0.03rem;
+    font-family: "Roboto";
+    font-size: clamp(1.1rem,1.5vw,1.2rem);
+    line-height: 2rem;
+}
+

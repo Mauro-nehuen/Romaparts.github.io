@@ -1,0 +1,415 @@
+:root{
+    --negro: #0F0F0F;
+    --blanco: #FFFFFF;
+    --verde-principal: #1F7A3E;
+    --verde-hover: #166030;
+    --gris-claro: #E5E5E5;
+    --gris-texto: #555555;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* -- HEADER -- */
+
+#header {
+    padding: 1rem;
+    background-color: var(--negro);
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo {
+    width: min(40px, 10%);
+    height: auto;
+    border-radius: 50%;
+    margin-left: .5rem;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+}
+
+label {
+    display: none;
+    color: var(--blanco);
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    gap: 0.4rem;
+    margin-right: .5rem;
+}
+
+.nav_list a {
+    font-family: "Inter";
+    text-decoration: none;
+    font-size: clamp(1rem,2vw,1rem);
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition:  color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    color: var(--blanco);
+}
+
+.nav_list a:hover {
+    background-color: var(--verde-principal);
+    transition: 0.3s;
+}
+
+/* -- MEDIA QUERIES HEADER -- */
+
+@media screen and (max-width:576px) {
+    label {
+        display: block;
+        cursor: pointer;
+    }
+    .nav_list {
+        font-size: 1.2em;
+        position: absolute;
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--negro);
+        gap: 2rem;
+        top: -1.2rem;
+        width: max(150px, 70%);
+        height: 110dvh;
+        transition: left 0.5s ease-in-out;
+        position: fixed;
+    }
+    input[type="checkbox"]:checked ~ ul {
+        left: 0;
+    }
+    .nav_list li {
+        width: 85%;
+        border-bottom: 1px solid #fff;
+        padding: 1.5rem 0;
+    }
+    .nav_list a {
+        width: 100%;
+        margin: 0 auto;
+        color: var(--gris-claro);
+    }
+    ul a:hover {
+        background-color: #2c8eec;
+    }
+}
+
+/* -- HEADER  END -- */
+
+/*  -- COMIENZO DE LAS SECCIONES DEL MAIN --  */
+
+
+/* -- SECCION DEL HERO -- */
+.main_hero {
+    background-image: url("img/fondoverde2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3rem 0;
+}
+
+.main_hero img {
+    max-width: 500px;
+    max-height: 450px;
+}
+
+.section_hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.section_hero h1 {
+    font-family: "Playfair Display";
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(3rem,5vw,3.7rem);
+    line-height: 6rem;
+    color: var(--negro);
+}
+
+.section_hero h1::first-line {
+    color: var(--gris-claro);
+}
+
+/* -- MEDIA QUERIES DE HERO -- */
+@media screen and (max-width:862px) {
+    .section_hero {
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+
+@media screen and (max-width:672px) {
+    .main_hero img {
+        max-width: 300px;
+        max-height: 250px;
+    }
+}
+
+/* -- SECCION HERO END -- */
+
+
+/* -- SECCION DE PRESENTACION -- */
+
+.main_presentacion {
+    padding: 8% 15% 5% 15%;
+}
+
+.section_presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section_presentacion_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section_presentacion_info h2 {
+    color: var(--negro);
+    font-size: clamp(1.5rem,3vw,2rem);
+    font-family: "Montserrat";
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+}
+
+.section_presentacion_info p {
+    width: 100%;
+    color: var(--gris-texto);
+    letter-spacing: 0.03rem;
+    font-family: "Roboto";
+    font-size: clamp(1.1rem,1.5vw,1.2rem);
+    line-height: 2rem;
+}
+
+/* -- MEDIA QUERIES DE PRESENTACION -- */
+
+
+@media screen and (max-width:920px) {
+    .main_presentacion {
+    padding: 8% 10% 5% 10%;
+    }
+    .section_presentacion {
+        flex-direction: column;
+        padding: 0 1rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .section_presentacion_info p {
+        width: 100%;
+    }
+}
+
+/* -- SECCION PRESENTACION END -- */
+
+
+/* -- SECCION DE PRODUCTOS -- */
+.main_invitacion {
+    padding: 9% 10% 5% 9%;
+    background: linear-gradient(var(--blanco),rgba(62, 154, 39, 0.655));
+}
+
+.invitacion_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: auto;
+}
+
+.invitacion_container h2{
+    color: var(--negro);
+    font-size: clamp(1.5rem,3vw,1.7rem);
+    font-family: "Montserrat";
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.invitacion_container a {
+    font-family: "Inter";
+    font-size: clamp(1.1rem,1.5vw,1.2rem);
+    text-decoration: none;
+    padding: 1rem;
+    color: var(--blanco);
+    background-color: var(--verde-principal);
+    border-radius: .5rem;
+    transition:background-color .2s ease-in-out, transform .2s ease-in-out ;
+}
+
+.invitacion_container a:hover {
+    background-color: var(--verde-hover);
+    transform: translateY(-3px);
+}
+
+/* -- SECCION QUERIES INVITACION -- */
+
+
+/* -- SECCION DE INVITACION END-- */
+
+
+/* -- SECCION DE CONTACTO -- */
+
+.main_contacto {
+    padding: 7% 15% 5% 12%;
+}
+
+.contacto_container h2 {
+    color: var(--negro);
+    font-size: clamp(1.5rem,3vw,2rem);
+    font-family: "Montserrat";
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.contacto_container p {
+    width: 100%;
+    color: var(--gris-texto);
+    letter-spacing: 0.03rem;
+    font-family: "Roboto";
+    font-size: clamp(1.1rem,1.5vw,1.2rem);
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contacto_container p:nth-child(3) {
+    color: var(--negro);
+}
+
+.contacto_container p:nth-child(4) {
+    color: var(--negro);
+}
+
+.contacto_container a {
+    text-decoration: none;
+    color: var(--verde-principal);
+}
+
+.contacto_container a:hover {
+    color: var(--verde-hover);
+    text-decoration: underline;
+}
+
+/* -- FOOTER -- */
+
+.main_footer {
+    background-color: var(--negro);
+    padding: 4rem 10%;
+}
+
+.section_footer {
+    font-size: clamp(1.1rem,2vw,1.2rem);
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    color: var(--blanco);
+    list-style: none;
+}
+
+.section_footer h3 {
+    font-family: sans-serif;
+    font-size: clamp(1.2rem,4vw,1.3rem);
+    border-bottom: 1px solid #fff;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.section_footer a {
+    font-size: clamp(1.1rem,2vw,1.2rem);
+    text-decoration: none;
+    color: var(--gris-claro);
+    line-height: 38px;
+    font-weight: 200;
+    transition: text-decoration 0.4s ease-in-out;
+}
+
+.section_footer a:hover{
+    text-decoration:underline;
+}
+
+.footer_content_redes {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+}
+
+.footer_content_redes a {
+    line-height: 0;
+    margin-bottom: 0.5rem;
+}
+
+.footer_redes {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.footer_redes li {
+    margin: 0.5rem 0;
+    padding: .35rem;
+    border-radius: 1rem;
+}
+
+.footer_redes li:hover {
+    background-color: var(--verde-principal);
+}
+
+.section_footer_name {
+    margin-top: 3rem;
+    text-align: center;
+    color: var(--blanco);
+    border-top: 1px solid #fff;
+}
+
+.section_footer_name h3 {
+    margin-top: 1rem;
+}
+
+/* -- MEDIA QUERIES FOOTER -- */
+
+@media screen and (max-width:670px) {
+    .section_footer {
+        flex-direction: column;
+        padding: 0 30%;
+        text-align: center;
+        gap: 1.9rem;
+    }
+    .footer_redes {
+        justify-content: center;
+    }
+}
+
+/* -- FOOTER END -- */
+
+
